@@ -192,8 +192,6 @@ metadata:
 
 test_plan:
   current_focus:
-    - "Contact Form API"
-    - "Database Integration"
     - "Contact Form Frontend"
     - "Modern Portfolio Design"
   stuck_tasks: []

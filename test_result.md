@@ -134,6 +134,42 @@ backend:
       - working: true
         agent: "testing"
         comment: "Successfully verified MongoDB integration. Contact messages are properly stored in the database with UUID identifiers. The API can retrieve all contacts and individual contacts by ID. The database also correctly tracks contact status updates."
+        
+  - task: "Health Check"
+    implemented: true
+    working: true
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "Successfully tested the /api/health endpoint. The API returns a 200 status code with a JSON response containing 'status': 'healthy' and a message indicating the API is running."
+        
+  - task: "Portfolio Stats"
+    implemented: true
+    working: true
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "Successfully tested the /api/stats endpoint. The API returns portfolio statistics including total_contacts, new_contacts, projects_completed, years_experience, and happy_clients. The contact counts correctly reflect the database state."
+        
+  - task: "Contact Management"
+    implemented: true
+    working: true
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "Successfully tested the contact management endpoints. The /api/contacts endpoint returns all contacts in the database. The /api/contacts/{contact_id} endpoint returns a specific contact by ID. The /api/contacts/{contact_id}/status endpoint allows updating a contact's status. All endpoints work as expected."
 
 frontend:
   - task: "Modern Portfolio Design"
